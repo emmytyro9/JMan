@@ -1,7 +1,7 @@
 import java.awt.Color;
 
 public class Pillar extends Piece {
-	/** Constructor: a new J*Man at position (x, y) on Map m
+	/** Constructor: a new Pillar at position (x, y) on Map m
     with color red if c = 0, green if c = 1, and yellow if c = 2. */
 	public Pillar(int x, int y, int c, Map m){
 		super(Piece.PILLAR, m); 

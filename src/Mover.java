@@ -1,6 +1,7 @@
 import java.awt.Color;
 
 public class Mover extends Piece{
+	
 	/** Constructor: a new WALKER at position (x, y) on Map m
     with color red if c = 0, green if c = 1, and yellow if c = 2. */
 	public Mover(int x, int y, int c, Map m){
@@ -16,16 +17,21 @@ public class Mover extends Piece{
 		}
 	}
 
-	/** Constructor: a new J*Man at position (x, y) on Map m
-    with color c. Precondition: c is one of
-    Color.RED, Color.GREEN, and Color.YELLOW.*/
+	/** 
+	 * @param int x  Position x of walker
+	 * @param int y  Position y of walker
+	 * @param Color color  color of walker
+	 * @param Map m  Map*/
 	public Mover(int x, int y, Color c, Map m){
 		super(Piece.WALKER, m);
 		if(c.equals(Color.RED) || c.equals(Color.GREEN) || c.equals(Color.YELLOW)) {
 			this.setColor(c) ; 
 		}
 	}
-
+	
+	/** Constructor: a new Walker at position (x, y) on Map m
+    with color c. Precondition: c is one of
+    Color.RED, Color.GREEN, and Color.YELLOW.*/
 	public void act(){
 		if(Piece.rand(0, 2) == 0) {
 			if(Piece.rand(0, 3) == 0 && this.getMap().isEmpty(this.getX(), this.getY()+1)) {

@@ -3,6 +3,7 @@ import java.awt.*;
 /** An instance of this class is a J*Man.
  There should at most one J*Man in a game board at a time*/
 public class JMan extends Piece {
+	
 	/** Constructor: a new J*Man at position (x, y) on Map m
      with color red if c = 0, green if c = 1, and yellow if c = 2. */
 	public JMan(int x, int y, int c, Map m){
@@ -66,7 +67,9 @@ public class JMan extends Piece {
 		String color = "";
 		return getColorWord() + " J*Man at (" + getX() + ", " + getY() + ")";
 	}
-
+	
+	/** To Check if JMan can eat obstacles or not 
+	 * @param Color color - color of obstacles */
 	public boolean isEatable(Color color) {
 		if(this.getColor().equals(Color.GREEN) && color.equals(Color.RED)) {
 			this.setColor(Color.RED);
